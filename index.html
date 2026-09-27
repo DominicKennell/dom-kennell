@@ -4,125 +4,244 @@
   <title>Dom's Animation Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- Google Fonts for clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #38bdf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 12px;
+      color: var(--text-main);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-body {
+      padding: 16px 20px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #334155;
+      margin: 40px 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>About Dom</h1>
-  <p>This is a website to document all the animation progress I make. It's not really exciting, more for me.</p>
-  
-  <hr>
+  <header>
+    <h1>Dom's Animation Portfolio</h1>
+    <p>Documenting frame-by-frame vector animation progress and side projects.</p>
+  </header>
 
-  <h2>Puff the Cloud Carousel</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <video width="100%" controls>
-          <source src="Test1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Ep2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  <section>
+    <h2>Puff the Cloud</h2>  
+    <div class="grid">
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Test1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Test 1</div>
+        </div>
       </div>
 
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Ep3.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Ep4.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Ep2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Episode 2</div>
+        </div>
       </div>
 
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Ep5.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Ep3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Episode 3</div>
+        </div>
       </div>
-      
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Ep6.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Ep4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Episode 4</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-
-  <h2>Random Animation Carousel</h2>  
-  <div id="randCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#randCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#randCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <video width="100%" controls>
-          <source src="Rocket01.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Ep5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Episode 5</div>
+        </div>
       </div>
-      
-      <div class="item">
-        <video width="100%" controls>
-          <source src="Rocket02.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Ep6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Episode 6</div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#randCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#randCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+  <hr>
+
+  <section>
+    <h2>Random Animations</h2>  
+    <div class="grid">
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Rocket01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Rocket 01</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="Rocket02.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Rocket 02</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Dom. Built for progress tracking.</p>
+  </footer>
 </div>
 
 </body>
